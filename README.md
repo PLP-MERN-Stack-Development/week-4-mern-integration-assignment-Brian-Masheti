@@ -66,7 +66,15 @@ Create a `.env` file in the `server/` directory with your MongoDB URI and any ot
 MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 PORT=5000
+HOST=0.0.0.0
 ```
+
+### 3.1. Network Access (for multi-device development)
+If you want to access your backend or frontend from another device on your local network (e.g., your desktop and laptop), make sure your server binds to all interfaces by setting:
+```
+HOST=0.0.0.0
+```
+This allows the server to be accessible from other devices on the same WiFi/network. By default, many setups use `localhost` or `127.0.0.1`, which is only accessible from the same machine.
 
 ### 4. Running the Application
 #### Start the server
@@ -90,4 +98,27 @@ The client will typically run on [http://localhost:5173](http://localhost:5173) 
 - `pnpm dev` (client): Start React development server
 - `pnpm build` (client): Build React app for production
 - `pnpm start` (server): Start Express server
+I also rememer i had t
+## API Endpoints
+
+Below are the main API endpoints you can use to interact with the backend. Use tools like Postman to test these routes:
+
+```
+MERN-Blog-API
+
+├── POST   /api/categories           # CreateCategory
+├── GET    /api/categories           # GetAllCategories
+├── POST   /api/posts                # CreatePost
+├── GET    /api/posts                # GetAllPosts
+├── GET    /api/posts/:id            # GetSinglePost
+├── PUT    /api/posts/:id            # UpdatePost
+├── DELETE /api/posts/:id            # DeletePost
+├── POST   /api/auth/register        # TestRegistration
+├── POST   /api/auth/login           # TestLogin
+├── POST   /api/upload               # UploadPostImage
+```
+
+- Replace `:id` with the actual post ID.
+- All POST/PUT endpoints expect JSON bodies unless uploading files (use multipart/form-data for image upload).
+- Auth endpoints return a JWT token for protected routes.
 
