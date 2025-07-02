@@ -1,0 +1,36 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Sensitive files
+.env
+.env.*
+*.env
+*.key
+*.pem
+*.crt
+*.cert
+*.p12
+*.pfx
+
+node_modules
+*.local
+
+# Package manager lock file
+pnpm-lock.yaml
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
